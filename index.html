@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lumen Fold — Meet the New Generation</title>
+<meta name="description" content="Lumen Fold: a book-style foldable phone with a titanium dual-leaf shell, a continuous inner display, and a camera system engineered for how you actually see the world." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          void: '#08090b',
+          graphite: '#141519',
+          panel: '#1a1c21',
+          titanium: '#c7cad0',
+          ion: '#5ee7ff',
+          copper: '#d98a4b'
+        },
+        fontFamily: {
+          display: ['Space Grotesk', 'sans-serif'],
+          body: ['Inter', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-void text-titanium font-body antialiased">
+
+<!-- Loader -->
+<div id="loader" class="loader">
+  <span class="loader-mark">LF</span>
+</div>
+
+<!-- Nav -->
+<header class="nav-wrap">
+  <nav class="nav-glass">
+    <a href="#hero" class="nav-logo" data-scroll>Lumen Fold</a>
+    <div class="nav-links">
+      <a href="#experience" data-scroll>Design</a>
+      <a href="#camera" data-scroll>Camera</a>
+      <a href="#performance" data-scroll>Performance</a>
+      <a href="#battery" data-scroll>Battery</a>
+    </div>
+    <a href="#cta" class="nav-cta" data-scroll>Get notified</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ EXPERIENCE: HERO + 360 + EXPLODE ============ -->
+  <section id="experience">
+    <div class="stage">
+      <canvas id="webgl-main"></canvas>
+      <div id="labels-root"></div>
+      <div id="hover-tip" class="hover-tip"></div>
+
+      <!-- Phase panels -->
+      <div id="hero" class="phase phase-hero">
+        <p class="eyebrow">Lumen Fold</p>
+        <h1 class="headline">Meet the new<br />generation.</h1>
+        <p class="lede">A titanium shell that opens like a book.<br class="hide-sm" /> One continuous display, a hinge built to disappear.</p>
+        <div class="scroll-cue">
+          <span>Scroll to explore</span>
+          <div class="scroll-cue-line"><i></i></div>
+        </div>
+      </div>
+
+      <div class="phase phase-showcase">
+        <h2 class="phase-title">Watch it<br />unfold.</h2>
+        <p class="phase-text">Drag to rotate. Keep scrolling to see it open flat.</p>
+      </div>
+
+      <div class="phase phase-explode">
+        <h2 class="phase-title">Six systems.<br />One machine.</h2>
+        <p class="phase-text">Hover a component to learn what it does. Click to look closer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENTS ============ -->
+  <section id="components" class="section">
+    <div class="section-head">
+      <h2 class="section-title">What's inside</h2>
+      <p class="section-sub">Every part chosen, machined, and placed on purpose.</p>
+    </div>
+    <div class="component-grid">
+      <article class="component-card" style="--accent:#5ee7ff">
+        <span class="component-dot"></span>
+        <h3>Foldable display</h3>
+        <p>A 5.5" outer screen for quick use, opening to a 7.8" inner display. Both run ProMotion at 120Hz with a nano-texture finish that softens the crease.</p>
+      </article>
+      <article class="component-card" style="--accent:#c7cad0">
+        <span class="component-dot"></span>
+        <h3>Titanium shell</h3>
+        <p>Grade 5 titanium across both leaves, machined to a 0.05mm tolerance — thin enough to fold, stiff enough to trust.</p>
+      </article>
+      <article class="component-card" style="--accent:#7d8590">
+        <span class="component-dot"></span>
+        <h3>Precision hinge</h3>
+        <p>A sealed mechanism built from more than 100 components, tuned for a smooth, even fold every time.</p>
+      </article>
+      <article class="component-card" style="--accent:#8b7bff">
+        <span class="component-dot"></span>
+        <h3>Camera module</h3>
+        <p>Triple 48MP system with sensor-shift stabilization and a dedicated macro lens.</p>
+      </article>
+      <article class="component-card" style="--accent:#4dd6a1">
+        <span class="component-dot"></span>
+        <h3>Dual logic boards</h3>
+        <p>A custom 3nm chip split across both leaves and linked through the hinge, with headroom for what's next.</p>
+      </article>
+      <article class="component-card" style="--accent:#d98a4b">
+        <span class="component-dot"></span>
+        <h3>Dual battery cells</h3>
+        <p>Twin silicon-carbon cells, one per leaf. 65W wired, 30W wireless — a full day without thinking about it.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ CAMERA ============ -->
+  <section id="camera" class="section split">
+    <div class="split-visual">
+      <canvas id="webgl-camera"></canvas>
+      <span class="drag-hint">Drag to inspect</span>
+    </div>
+    <div class="split-copy">
+      <h2 class="section-title">See more<br />than light.</h2>
+      <p class="section-sub">Three lenses, one sensor architecture, tuned to work together instead of competing for the shot.</p>
+      <ul class="feature-list">
+        <li><span>Sensor-shift OIS</span>Steadies every frame at the hardware level, not after the fact.</li>
+        <li><span>Adaptive night mode</span>Reads the scene first, then decides how long to expose.</li>
+        <li><span>ProRAW capture</span>Full sensor data, for when you want to finish the photo yourself.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ PERFORMANCE ============ -->
+  <section id="performance" class="section">
+    <div class="section-head">
+      <h2 class="section-title">Power that doesn't<br />ask for attention.</h2>
+      <p class="section-sub">Faster where it's felt — opening apps, exporting video, staying cool under load.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <span class="stat-value" data-count="10">0</span>
+        <span class="stat-label">CPU cores</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" data-count="16">0</span>
+        <span class="stat-label">GPU cores</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" data-count="38" data-suffix=" TOPS">0</span>
+        <span class="stat-label">Neural engine</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" data-count="8200">0</span>
+        <span class="stat-label">Benchmark score</span>
+      </div>
+    </div>
+    <div class="bar-compare">
+      <div class="bar-row">
+        <span class="bar-label">Lumen Fold</span>
+        <div class="bar-track"><div class="bar-fill" data-target="94"></div></div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Previous generation</span>
+        <div class="bar-track"><div class="bar-fill bar-fill-dim" data-target="68"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BATTERY ============ -->
+  <section id="battery" class="section split reverse">
+    <div class="split-copy">
+      <h2 class="section-title">A full day,<br />undramatically.</h2>
+      <p class="section-sub">Two silicon-carbon cells, one in each leaf, paired with charging that keeps up when you're in a hurry.</p>
+      <ul class="feature-list">
+        <li><span>65W wired</span>0 to 50% in about eighteen minutes.</li>
+        <li><span>30W wireless</span>No cable required, same charging curve.</li>
+        <li><span>Adaptive power</span>Learns your day and holds reserve for the end of it.</li>
+      </ul>
+    </div>
+    <div class="split-visual battery-visual">
+      <div class="battery-shell">
+        <div class="battery-fill" id="battery-fill"></div>
+        <div class="battery-nub"></div>
+      </div>
+      <span class="battery-readout"><em id="battery-percent">0</em>%</span>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section id="cta" class="section cta-section">
+    <p class="eyebrow">Lumen Fold</p>
+    <h2 class="cta-title">It's here.</h2>
+    <p class="cta-sub">Starting at $1,899. Two titanium finishes.</p>
+    <button id="notify-open" type="button" class="nav-cta cta-button">Get notified</button>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>© 2026 Lumen Fold. A concept showcase.</span>
+</footer>
+
+<!-- Notify Modal -->
+<div id="notify-modal" class="modal-backdrop" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button id="notify-close" type="button" class="modal-close" aria-label="Close">&times;</button>
+    <h3 id="modal-title">Get notified</h3>
+    <p>Leave your email and we'll let you know the moment Lumen Fold ships. Nothing is sent anywhere — this demo keeps it on your device.</p>
+    <form id="notify-form" novalidate>
+      <input id="notify-email" type="email" placeholder="you@email.com" autocomplete="email" required />
+      <button type="submit">Notify me</button>
+    </form>
+    <p id="notify-status" class="notify-status" role="status"></p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="script.js"></script>
+</body>
+</html>
